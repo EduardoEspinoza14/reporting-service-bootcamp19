@@ -2,5 +2,5 @@ FROM openjdk:8
 #VOLUME /tmp
 EXPOSE 8083
 EXPOSE 9000
-ADD target/gateway.jar gateway.jar
-ENTRYPOINT ["java", "-jar", "gateway.jar"]
+ADD target/reporting-service.jar reporting-service.jar
+ENTRYPOINT ["java", "-jar", "reporting-service.jar"]
