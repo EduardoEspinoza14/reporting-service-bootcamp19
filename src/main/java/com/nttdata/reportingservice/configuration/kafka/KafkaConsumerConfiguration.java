@@ -12,10 +12,10 @@ import reactor.kafka.receiver.ReceiverOptions;
  */
 public abstract class KafkaConsumerConfiguration<K, V> {
 
-  @Value(value = "${kafka.bootstrapAddress}")
+  @Value(value = "${kafka.bootstrapAddress:}")
   public String bootstrapAddress;
 
-  @Value(value = "${kafka.group-id}")
+  @Value(value = "${kafka.group-id:}")
   public String groupId;
 
   public static final String PRODUCT_TOPIC_INSERT = "product.insert";

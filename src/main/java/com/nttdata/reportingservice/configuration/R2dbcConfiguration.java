@@ -19,7 +19,7 @@ import org.springframework.r2dbc.connection.init.ResourceDatabasePopulator;
 @EnableR2dbcRepositories()
 public class R2dbcConfiguration extends AbstractR2dbcConfiguration {
 
-  @Value("${spring.r2dbc.h2.url}")
+  @Value("${spring.r2dbc.h2.url:mem:/default}")
   private String url;
 
   /**
