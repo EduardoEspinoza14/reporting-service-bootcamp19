@@ -1,4 +1,4 @@
-FROM openjdk:8
+FROM openjdk:11
 #VOLUME /tmp
 EXPOSE 8083
 EXPOSE 9000
