@@ -19,6 +19,10 @@ public class KafkaTopicConfiguration {
   @Value(value = "${kafka.bootstrapAddress:}")
   private String bootstrapAddress;
 
+  private static final String WALLET_TOPIC_INSERT = "wallet.insert";
+  private static final String WALLET_TOPIC_UPDATE = "wallet.update";
+  private static final String WALLET_TOPIC_DELETE = "wallet.delete";
+
   /**
    * Method KafkaAdmin.
    */
@@ -72,6 +76,21 @@ public class KafkaTopicConfiguration {
   @Bean
   public NewTopic topicDeleteMovement() {
     return new NewTopic(KafkaConsumerConfiguration.MOVEMENT_TOPIC_DELETE, 1, (short) 1);
+  }
+
+  @Bean
+  public NewTopic topicInsertWallet() {
+    return new NewTopic(WALLET_TOPIC_INSERT, 1, (short) 1);
+  }
+
+  @Bean
+  public NewTopic topicUpdateWallet() {
+    return new NewTopic(WALLET_TOPIC_UPDATE, 1, (short) 1);
+  }
+
+  @Bean
+  public NewTopic topicDeleteWallet() {
+    return new NewTopic(WALLET_TOPIC_DELETE, 1, (short) 1);
   }
 
 }
